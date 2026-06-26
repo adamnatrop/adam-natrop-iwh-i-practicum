@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Freezer Items
+        p
+            a(href="/update-cobj") Add to this table
+        table(border="1" cellpadding="8")
+            thead
+                tr
+                    th Name
+                    th Date Frozen
+                    th Location
+            tbody
+                each item in data
+                    tr
+                        td #{item.properties.item_name}
+                        td #{item.properties.date_frozen}
+                        td #{item.properties.location_description}
